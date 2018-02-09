@@ -1,0 +1,38 @@
+{
+  "name": "Hello-World",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./build",
+    "build": "webpack --config ./config/webpack.config.js",
+    "dev": "npm run build && npm start",
+    "test": "",
+    "fmt:js": "prettier --write --single-quote './src/**/*.js'",
+    "fmt": "npm run fmt:js",
+    "precommit": "lint-staged"
+  },
+  "repository": "https://github.com/RedHeadDigital/Hello-World.git",
+  "author": "Mark White <mark@redheaddigital.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "helmet": "^3.10.0",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2",
+    "webpack": "^3.10.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write --single-quote",
+      "git add"
+    ]
+  }
+}
