@@ -14,8 +14,8 @@ app.use('/', (req, res) => {
   res.json({ status: 'Ok' });
 });
 
-app.listen(3333, () => {
-  console.log('Server listening...');
+const server = app.listen(3333, () => {
+  const { address, port } = server.address();
 });
 
 export default app;
